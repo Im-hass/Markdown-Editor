@@ -1,10 +1,17 @@
-import MarkdownEditor from "./MarkdownEditor";
+import React from "react";
 import "./main.css";
+import InputList from "./InputList";
 
 function App() {
+    const handleSave = () => {};
+
     return (
-        <div className="App">
-            <MarkdownEditor />
+        <div className="container">
+            <InputList />
+
+            <button onClick={handleSave} className="btn-save">
+                Save
+            </button>
         </div>
     );
 }
