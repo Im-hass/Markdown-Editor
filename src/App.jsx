@@ -1,12 +1,12 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Toolbar from "./components/Toolbar";
-import Main from "./components/Main";
 
-import "./App.css";
-import List from "./components/List";
+import ListPage from "./pages/ListPage";
 import ListContent from "./components/ListContent";
 import DetailContent from "./components/DetailContent";
+
+import "./App.css";
 
 function App() {
     return (
@@ -14,8 +14,7 @@ function App() {
             <Toolbar />
             <div className="container">
                 <Routes>
-                    <Route path="/" element={<Main />} />
-                    <Route path="/list" element={<List />}>
+                    <Route path="/" element={<ListPage />}>
                         <Route index element={<ListContent />} />
                         <Route path="detail" element={<DetailContent />} />
                     </Route>

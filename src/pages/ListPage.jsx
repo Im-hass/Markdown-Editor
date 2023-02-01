@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-function List() {
+function ListPage() {
     return (
         <div>
             <div>정책 목록</div>
@@ -12,4 +12,4 @@ function List() {
     );
 }
 
-export default List;
+export default ListPage;
