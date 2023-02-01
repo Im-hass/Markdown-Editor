@@ -1,11 +1,13 @@
 import React from "react";
+import ListItem from "./ListItem";
 
 function ListContent() {
     return (
         <div>
-            <h2>리스트 아이템</h2>
-            <h2>리스트 아이템</h2>
-            <h2>리스트 아이템</h2>
+            <h1>조회</h1>
+            <ListItem keyValue="privacy" />
+            <ListItem keyValue="privacy2" />
+            <ListItem keyValue="privacy3" />
         </div>
     );
 }
