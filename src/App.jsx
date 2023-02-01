@@ -1,17 +1,28 @@
 import React from "react";
 import "./main.css";
-import InputList from "./InputList";
+import MarkdownEditor from "./components/MarkdownEditor";
 
 function App() {
-    const handleSave = () => {};
+    const handleSubmit = () => {};
 
     return (
         <div className="container">
-            <InputList />
+            <form onSubmit={handleSubmit}>
+                <div className="box">
+                    <span>Key</span>
+                    <input type="text" />
+                </div>
 
-            <button onClick={handleSave} className="btn-save">
-                Save
-            </button>
+                <div className="box">
+                    <span>Content</span>
+                    <div className="editor-wrap">
+                        <MarkdownEditor />
+                    </div>
+                </div>
+                <button type="submit" className="btn-save">
+                    Save
+                </button>
+            </form>
         </div>
     );
 }

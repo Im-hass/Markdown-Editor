@@ -19,7 +19,7 @@ input:focus {
   flex-direction: column;
 }
 
-.box span {
+.box > span {
   margin-bottom: 10px;
   font-size: 22px;
   font-weight: bold;
@@ -33,6 +33,11 @@ input:focus {
 
 .editor-wrap {
   margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 .btn-save {
