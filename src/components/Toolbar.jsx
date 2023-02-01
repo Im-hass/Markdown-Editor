@@ -6,7 +6,7 @@ import "./Toolbar.css";
 function Toolbar() {
     return (
         <div className="toolbar-wrap">
-            <Link to="/list">조회</Link>
+            <Link to="/">조회</Link>
             <Link to="/regi">등록</Link>
         </div>
     );
