@@ -1,0 +1,10 @@
+.btn-save {
+  padding: 6px 36px;
+  background-color: #2998FF;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  align-self: flex-end;
+}
