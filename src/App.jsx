@@ -1,28 +1,26 @@
 import React from "react";
-import "./main.css";
-import MarkdownEditor from "./components/MarkdownEditor";
+import { Route, Routes } from "react-router-dom";
+import Toolbar from "./components/Toolbar";
+import Main from "./components/Main";
+
+import "./App.css";
+import List from "./components/List";
+import ListContent from "./components/ListContent";
+import DetailContent from "./components/DetailContent";
 
 function App() {
-    const handleSubmit = () => {};
-
     return (
-        <div className="container">
-            <form onSubmit={handleSubmit}>
-                <div className="box">
-                    <span>Key</span>
-                    <input type="text" />
-                </div>
-
-                <div className="box">
-                    <span>Content</span>
-                    <div className="editor-wrap">
-                        <MarkdownEditor />
-                    </div>
-                </div>
-                <button type="submit" className="btn-save">
-                    Save
-                </button>
-            </form>
+        <div className="wrap">
+            <Toolbar />
+            <div className="container">
+                <Routes>
+                    <Route path="/" element={<Main />} />
+                    <Route path="/list" element={<List />}>
+                        <Route index element={<ListContent />} />
+                        <Route path="detail" element={<DetailContent />} />
+                    </Route>
+                </Routes>
+            </div>
         </div>
     );
 }

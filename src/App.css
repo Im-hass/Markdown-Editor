@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  color: #222;
+  margin: 0;
+  padding: 0;
+}
+
+input:focus {
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
