@@ -19,7 +19,7 @@ function Form() {
                     <MarkdownEditor />
                 </div>
             </div>
-            <button type="submit" className="btn-save">
+            <button type="submit" className="btn">
                 등록
             </button>
         </form>

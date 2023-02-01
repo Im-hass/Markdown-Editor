@@ -13,8 +13,24 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
 .container {
   margin: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.btn {
+  padding: 6px 36px;
+  background-color: #2998FF;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  align-self: flex-end;
 }

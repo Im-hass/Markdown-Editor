@@ -7,6 +7,7 @@ import ListContent from "./components/ListContent";
 import DetailContent from "./components/DetailContent";
 
 import "./App.css";
+import Form from "./components/Form";
 
 function App() {
     return (
@@ -16,8 +17,9 @@ function App() {
                 <Routes>
                     <Route path="/" element={<ListPage />}>
                         <Route index element={<ListContent />} />
-                        <Route path="detail" element={<DetailContent />} />
+                        <Route path="detail/:keyValue" element={<DetailContent />} />
                     </Route>
+                    <Route path="regi" element={<Form />} />
                 </Routes>
             </div>
         </div>
