@@ -3,9 +3,7 @@ import React from "react";
 import MDEditor from "@uiw/react-md-editor";
 import rehypeSanitize from "rehype-sanitize";
 
-function MarkdownEditor() {
-    const [value, setValue] = React.useState("# Hello, world!");
-
+function MarkdownEditor({ value, setValue }) {
     return (
         <>
             <MDEditor
