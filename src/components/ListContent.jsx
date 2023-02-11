@@ -1,14 +1,53 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ListItem from "./ListItem";
+import { getKeyList } from "../store/api/policy";
+import DetailContent from "./DetailContent";
+import { useNavigate } from "react-router-dom";
 
 function ListContent() {
+    const navigate = useNavigate();
+    const token = localStorage.getItem("token");
+    const [data, setData] = useState(null);
+    const [isOpenDeatil, setIsOpenDetail] = useState(false);
+
+    const handleDetail = (keyValue) => {
+        console.log(keyValue);
+        setIsOpenDetail(true);
+        navigate(`/detail/${keyValue}`);
+    };
+
+    useEffect(() => {
+        getKeyList(token)
+            .then((res) => {
+                console.log(res);
+                setData(res.data.data);
+                console.log(res.data.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }, [token, isOpenDeatil]);
+
     return (
-        <div>
-            <h1>조회</h1>
-            <ListItem keyValue="privacy" />
-            <ListItem keyValue="privacy2" />
-            <ListItem keyValue="privacy3" />
-        </div>
+        <>
+            {isOpenDeatil ? (
+                <DetailContent />
+            ) : (
+                <>
+                    <div>
+                        <h1>조회</h1>
+                        {data &&
+                            data.map((v) => (
+                                <ListItem
+                                    key={v.index}
+                                    keyValue={v.key}
+                                    handleDetail={handleDetail}
+                                />
+                            ))}
+                    </div>
+                </>
+            )}
+        </>
     );
 }
 

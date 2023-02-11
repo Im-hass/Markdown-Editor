@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ListContent from "../components/ListContent";
+import Form from "../components/Form";
 
-function ListPage() {
+function RegistrationPage() {
     const navigate = useNavigate();
     const token = localStorage.getItem("token");
     const [isLogin, setIsLogin] = useState(false);
@@ -19,7 +19,7 @@ function ListPage() {
     if (isLogin) {
         return (
             <>
-                <ListContent />
+                <Form />
             </>
         );
     }
@@ -27,4 +27,4 @@ function ListPage() {
     return <></>;
 }
 
-export default ListPage;
+export default RegistrationPage;

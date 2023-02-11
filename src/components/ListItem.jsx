@@ -1,14 +1,18 @@
 import React from "react";
 
 import "./ListItem.css";
-import { Link } from "react-router-dom";
 
-function ListItem({ keyValue }) {
+function ListItem({ keyValue, handleDetail }) {
     return (
-        <Link to={`/detail/${keyValue}`} className="listItem-wrap">
+        <button
+            onClick={() => {
+                handleDetail(keyValue);
+            }}
+            className="listItem-wrap"
+        >
             <div className="title">Key</div>
             <div className="value">{keyValue}</div>
-        </Link>
+        </button>
     );
 }
 
