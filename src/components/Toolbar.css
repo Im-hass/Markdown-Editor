@@ -10,11 +10,20 @@
   text-align: center;
 }
 
-.toolbar-wrap > a {
+.toolbar-wrap > button {
+  background-color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.toolbar-wrap > a,
+.toolbar-wrap > button {
   flex: 1;
   padding: 10px 5px;
 }
 
-.toolbar-wrap > a:first-child {
+.toolbar-wrap > a:first-child,
+.toolbar-wrap > a:nth-child(2) {
   border-right: 1px solid #EEE;
 }

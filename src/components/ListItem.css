@@ -1,9 +1,11 @@
 .listItem-wrap {
   width: 100%;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 14px;
   display: flex;
   flex-direction: row;
+  text-align: left;
+  background-color: #fff;
   border: 1px solid #EEE;
   border-radius: 5px;
 }
