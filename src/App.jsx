@@ -4,10 +4,10 @@ import Toolbar from "./components/Toolbar";
 
 import ListPage from "./pages/ListPage";
 import DetailContent from "./components/DetailContent";
-
-import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import RegistrationPage from "./pages/RegistrationPage";
+
+import "./App.css";
 
 function App() {
     return (
