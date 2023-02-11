@@ -26,8 +26,6 @@ function LoginContent() {
     };
 
     const handleInputValue = (e) => {
-        console.log(e.target.name);
-        console.log(e.target.value);
         setInputData({
             ...inputData,
             [e.target.name]: e.target.value,

@@ -18,9 +18,7 @@ function ListContent() {
     useEffect(() => {
         getKeyList(token)
             .then((res) => {
-                console.log(res);
                 setData(res.data.data);
-                console.log(res.data.data);
             })
             .catch((err) => {
                 console.log(err);

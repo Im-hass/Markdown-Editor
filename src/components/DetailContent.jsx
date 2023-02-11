@@ -20,7 +20,6 @@ function DetailContent() {
                     key: keyValue,
                     contents: res.data.data.contents,
                 });
-                console.log(res);
             });
         }
     }, [keyValue]);
