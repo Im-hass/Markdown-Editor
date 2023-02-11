@@ -11,11 +11,7 @@ export const getKeyList = async (token) => {
     return res;
 };
 
-export const getDetailPolicy = async (token, keys) => {
-    const res = await basicRequest.get(`${SERVICE}/policy/${keys}`, {
-        headers: {
-            Authorization: token,
-        },
-    });
+export const getDetailPolicy = async (keys) => {
+    const res = await basicRequest.get(`${SERVICE}/policy/${keys}`, );
     return res;
 };
