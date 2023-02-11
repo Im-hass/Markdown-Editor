@@ -11,7 +11,6 @@ function ListContent() {
     const [isOpenDeatil, setIsOpenDetail] = useState(false);
 
     const handleDetail = (keyValue) => {
-        console.log(keyValue);
         setIsOpenDetail(true);
         navigate(`/detail/${keyValue}`);
     };
@@ -26,7 +25,13 @@ function ListContent() {
             .catch((err) => {
                 console.log(err);
             });
-    }, [token, isOpenDeatil]);
+    }, [token]);
+
+    useEffect(() => {
+        if (data !== null) {
+            setIsOpenDetail(false);
+        }
+    }, [data]);
 
     return (
         <>
