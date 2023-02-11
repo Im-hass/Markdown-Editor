@@ -3,11 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import Toolbar from "./components/Toolbar";
 
 import ListPage from "./pages/ListPage";
-import ListContent from "./components/ListContent";
 import DetailContent from "./components/DetailContent";
 
 import "./App.css";
-import Form from "./components/Form";
+import LoginPage from "./pages/LoginPage";
+import RegistrationPage from "./pages/RegistrationPage";
 
 function App() {
     return (
@@ -15,11 +15,17 @@ function App() {
             <Toolbar />
             <div className="container">
                 <Routes>
-                    <Route path="/" element={<ListPage />}>
-                        <Route index element={<ListContent />} />
-                        <Route path="detail/:keyValue" element={<DetailContent />} />
-                    </Route>
-                    <Route path="regi" element={<Form />} />
+                    <Route path="/" element={<LoginPage />} />
+                    <Route path="/list" element={<ListPage />} />
+                    <Route
+                        path="/detail/:keyValue"
+                        element={<DetailContent />}
+                    />
+                    <Route
+                        path="/registration"
+                        element={<RegistrationPage />}
+                    />
+                    <Route path="*" element={<LoginPage />} />
                 </Routes>
             </div>
         </div>
