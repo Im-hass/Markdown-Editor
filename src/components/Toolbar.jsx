@@ -15,7 +15,6 @@ function Toolbar() {
     };
 
     useEffect(() => {
-        console.log(token);
         if (token !== null) {
             setIsLogin(true);
         } else {
