@@ -25,6 +25,10 @@ function App() {
                         path="/registration"
                         element={<RegistrationPage />}
                     />
+                    <Route
+                        path="/modification"
+                        element={<RegistrationPage />}
+                    />
                     <Route path="*" element={<LoginPage />} />
                 </Routes>
             </div>

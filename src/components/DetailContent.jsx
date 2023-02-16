@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import "./DetailContent.css";
 
@@ -41,6 +41,18 @@ function DetailContent() {
                                 value={data.contents}
                             />
                         </div>
+                    </div>
+                    <div className="box btn-wrap">
+                        <Link
+                            to="/modification"
+                            state={{
+                                key: { keyValue },
+                            }}
+                            className="btn"
+                        >
+                            수정
+                        </Link>
+                        <button className="btn">삭제</button>
                     </div>
                 </div>
             )}

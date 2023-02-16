@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Form from "../components/Form";
 
 function RegistrationPage() {
+    const location = useLocation();
     const navigate = useNavigate();
     const token = localStorage.getItem("token");
     const [isLogin, setIsLogin] = useState(false);
+    const [header, setHeader] = useState();
 
     useEffect(() => {
         if (token !== null) {
@@ -14,14 +16,16 @@ function RegistrationPage() {
             setIsLogin(false);
             navigate("/");
         }
-    }, [token, navigate]);
+
+        if (location.pathname === "/registration") {
+            setHeader("등록");
+        } else {
+            setHeader("수정");
+        }
+    }, [token, navigate, location.pathname]);
 
     if (isLogin) {
-        return (
-            <>
-                <Form />
-            </>
-        );
+        return <>{header && <Form header={header} />}</>;
     }
 
     return <></>;

@@ -3,6 +3,12 @@ form {
   flex-direction: column;
 }
 
+.box-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
 .box {
   margin-bottom: 20px;
   display: flex;
@@ -19,6 +25,11 @@ form {
   padding: 10px;
   border: 1px solid #dadde6;
   border-radius: 4px;
+}
+
+.btn.btn-cancel {
+  margin-left: 20px;
+  background-color: rgb(170, 170, 170);
 }
 
 .editor-wrap {
