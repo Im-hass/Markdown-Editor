@@ -12,6 +12,16 @@ export const getKeyList = async (token) => {
 };
 
 export const getDetailPolicy = async (keys) => {
-    const res = await basicRequest.get(`${SERVICE}/policy/${keys}`, );
+    const res = await basicRequest.get(`${SERVICE}/policy/${keys}`);
     return res;
 };
+
+export const addNewPolicy = async (token, data) => {
+    const res = await basicRequest.post(`${SERVICE}/policy`, {
+        headers: {
+            Authorization: token,
+        },
+        data
+    });
+    return res;
+}
