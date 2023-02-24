@@ -4,6 +4,7 @@ import MarkdownEditor from "./MarkdownEditor";
 import "./Form.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getDetailPolicy } from "../store/api/policy";
+import { addNewPolicy } from "../store/api/policy";
 
 function Form({ header }) {
     const navigate = useNavigate();
@@ -14,10 +15,31 @@ function Form({ header }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log("submit");
-        console.log(keyValue);
-        console.log(value);
+        if (location.pathname === '/modification') {
+            handleModify();
+        } else {
+            if (keyValue !== undefined &&
+                keyValue.length !== 0 &&
+                value !== undefined &&
+                value.length !== 0) {
+                    const token = localStorage.getItem('token');
+                    addNewPolicy(token, {
+                        key: keyValue,
+                        contents: value,
+                    }).then(res => {
+                        if (res.status === 200) {
+                            navigate(`/detail/${keyValue}`);
+                        }
+                    }).catch(e => {
+                        console.log(e);
+                    });
+            }
+        }
     };
+
+    const handleModify = () => {
+        console.log('수정');
+    }
 
     const handleChangeKeyValue = (e) => {
         setKeyValue(e.target.value);
