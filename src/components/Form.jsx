@@ -86,7 +86,7 @@ function Form({ header }) {
                 </div>
 
                 <div className="box">
-                    <span>Content</span>
+                    <span>Contents</span>
                     <div className="editor-wrap">
                         <MarkdownEditor value={value} setValue={setValue} />
                     </div>
