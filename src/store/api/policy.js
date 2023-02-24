@@ -25,3 +25,12 @@ export const addNewPolicy = async (token, data) => {
     });
     return res;
 }
+
+export const deletePolicy = async (token, key) => {
+    const res = await basicRequest.delete(`${SERVICE}/policy/${key}`, {
+        headers: {
+            Authorization: token,
+        }
+    });
+    return res;
+}
