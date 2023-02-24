@@ -3,7 +3,7 @@ import MarkdownEditor from "./MarkdownEditor";
 
 import "./Form.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import { getDetailPolicy } from "../store/api/policy";
+import { getDetailPolicy, modifyPolicy } from "../store/api/policy";
 import { addNewPolicy } from "../store/api/policy";
 
 function Form({ header }) {
@@ -38,7 +38,20 @@ function Form({ header }) {
     };
 
     const handleModify = () => {
-        console.log('수정');
+        if (value !== undefined && value.length !== 0) {
+                const token = localStorage.getItem('token');
+                modifyPolicy(token, {
+                    key: keyValue,
+                    contents: value,
+                }).then(res => {
+                    console.log(res);
+                    if (res.status === 200) {
+                        navigate(`/detail/${keyValue}`);
+                    }
+                }).catch(e => {
+                    console.log(e);
+                });
+        }
     }
 
     const handleChangeKeyValue = (e) => {
@@ -68,6 +81,7 @@ function Form({ header }) {
                         type="text"
                         value={keyValue || ""}
                         onChange={handleChangeKeyValue}
+                        readOnly={location.pathname === "/modification" ? true : false}
                     />
                 </div>
 

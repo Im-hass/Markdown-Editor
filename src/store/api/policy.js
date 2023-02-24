@@ -34,3 +34,12 @@ export const deletePolicy = async (token, key) => {
     });
     return res;
 }
+
+export const modifyPolicy = async (token, data) => {
+    const res = await basicRequest.put(`${SERVICE}/policy/${data.key}`, data, {
+        headers: {
+            Authorization: token,
+        }
+    });
+    return res;
+}
